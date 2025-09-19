@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities</title>
+    <link rel="stylesheet" href="styles.css">
+    
+   <style>
+    /* FONTS DECLARATION */
+    @font-face {
+      font-family: Ruda-Black;
+      src: url('../.fonts/Ruda-Black.TTF');
+    }
+
+    @font-face {
+      font-family: Regular;
+      src: url('../.fonts/OpenSans-Regular.ttf');
+    }
+
+    @font-face {
+      font-family: Bold;
+      src: url('../.fonts/OpenSans-Bold.TTF');
+    }
+
+
+    /* COLORS DECLARATION */
+    :root {
+      --nu-blue: #2C3E75;
+      --nu-gold: #D4A62A;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Regular;
+    }
+
+    /* BANNER HEADER STYLES */
+    .banner-header {
+      width: 100%;
+      height: 100px;
+      background-color: var(--nu-blue);
+      display: flex;
+      align-items: center;
+    }
+
+    .banner-header img {
+      height: 70px;
+      margin-right: 10px;
+      margin-left: 20px;
+    }
+
+    .banner-header h1 {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: left;
+      font-family: Ruda-Black;
+    }
+
+    /* SEPERATOR STYLES */
+    hr.large {
+      border: 0;
+      border-top: 20px solid var(--nu-gold);
+      margin: 0;
+    }
+
+    hr.medium {
+      border: 0;
+      border-top: 5px solid var(--nu-gold);
+      margin: 0 100px;
+    }
+
+    hr.small {
+      border: 0;
+      border-top: 1px solid black;
+      margin: 0 100px;
+    }
+
+    /* INTRODUTION HEADER STYLES */
+    .introduction {
+      height: 300px;
+      background-color: #5f6f9c;
+      display: flex;
+    }
+
+    .introduction h1 {
+      z-index: 100;
+      font-size: 45px;
+      font-family: Bold;
+      margin-left: 50px;
+      margin-top: auto;
+      color: white;
+    }
+
+    .introduction-image {
+      width: 100%;
+      height: 300px;
+      background-image: url('.resources/intro-image.jpg');
+      background-size: cover;
+      object-fit: cover;
+      background-position: center;
+      position: absolute;
+      opacity: 20%;
+    } 
+
+    /* NAVIGATION BAR STYLES */
+    .navigation-bar {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      margin-left: 50px;
+    }
+
+    .navigation-bar a {
+      color: black;
+      text-decoration: none;
+      padding: 0 50px;
+      font-family: Bold;
+    }
+
+    /* ON THIS PAGE STYLES */
+    .onThisPage {
+      display: flex;
+      flex-direction: row;
+      font-family: Regular;
+      margin-bottom: 60px;
+    }
+
+    .onThisPage-left {
+      margin-left: 100px;
+      margin-right:  40px;
+      width: 300px;
+    }
+
+    .onThisPage-right {
+      margin-right: 100px;
+      margin-left: 20px;
+      width: 100%;
+      font-size: 20px;
+      text-align: justify;
+    }
+
+    .showcase-title {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .showcase-title h1 {
+      font-size: 45px;
+      font-weight: lighter;
+    }
+
+    /* SHOWCASE PART STYLES */
+
+    .showcase {
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+      margin-left: auto;
+      margin-bottom: 100px;
+    }
+
+    .showcase table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+
+    .showcase h1 {
+      font-size: 30px;
+      width: 100%;
+    }
+
+    .showcase p {
+      font-size: 20px;
+      width: 100%;
+    }
+
+    .showcase-content {
+      max-width: 100%;
+      /* Adjust max-width as needed */
+      margin-left: 200px;
+      margin-right: 200px;
+    }
+
+    .showcase-image {
+      height: auto;
+      /* Ensure the image does not overflow its container */
+      max-width: 100%;
+      border: 20px solid #d8b638;
+
+    }
+   /* SLIDER  */
+
+   .slider-wrapper {
+      position: relative;
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+
+    .slider {
+      display: flex;
+      aspect-ratio: 16/9;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+      scrollbar-width: thin;
+      scrollbar-color: #d8b638 white;
+      border: 20px solid #d8b638;
+      border-top: 30px solid #5f6f9c;
+      border-bottom: 0px;
+
+    }
+
+    .slider img {
+      flex: 1 0 100%;
+      scroll-snap-align: start;
+      object-fit: cover;
+    }
+
+    button:hover {
+      background-color: #007bff;
+    }
+
+    /* BANNER FOOTER STYLES */
+    .banner-footer {
+      width: 100%;
+      height: 300px;
+      background-color: var(--nu-blue);
+      display: flex;
+    }
+
+    .banner-footer img {
+      height: 70px;
+      margin-right: 10px;
+      margin-left: 50px;
+      margin-top: 30px;
+    }
+
+    .banner-footer h1 {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: left;
+      font-family: Ruda-Black;
+      margin-top: 40px;
+    }
+
+    .banner-footer h2 {
+      margin-top: 115px;
+      margin-left: 50px;
+      position: absolute;
+      color: white;
+      font-size: 15px;
+      font-family: Regular;
+      font-weight: 500;
+    }
+
+    .banner-footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .banner-footer-links {
+      margin-top: 40px;
+      margin-left: auto;
+      margin-right: 70px;
+      color: white;
+      font-size: 15px;
+      font-family: Regular;
+    }
+
+    .banner-footer-links table {
+      border-collapse: collapse;
+      text-align: left;
+      vertical-align: top;
+      border-spacing: 15px;
+    }
+
+    .banner-footer-links th {
+      padding-bottom: 20px;
+      font-size: 15px;
+      color: #959689;
+      font-family: Regular;
+      font-weight: 100;
+    }
+
+    .banner-footer-links td {
+      padding-right: 70px;
+      padding-bottom: 5px;
+      color: #D9D9D9;
+    }
+
+    .banner-footer-links a {
+      color: #D9D9D9;
+      text-decoration: none;
+    }
+
+    .banner-footer-lower {
+      position: absolute;
+      margin-top: 220px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .banner-footer-lower-seperator {
+      width: 95%;
+      height: 1px;
+      background-color: white;
+    }
+
+    .banner-footer-lower p {
+      font-family: Regular;
+      color: white;
+      margin-top: 20px;
+    }
+
+    /* LINKS HOVER COLOR */
+    a:hover {
+      color: #007bff;
+    }
+
+  </style>
+    
+</head>
+
+<body>
+
+          <!-- TOP BANNER -->
+          <div class="banner-header">
+            <img src="../.global-resources/NU_Logo.png">
+            <h1>NATIONAL<br>
+              UNIVERSITY
+            </h1>
+          </div>
+    
+          <hr class="large">
+    
+          <div class="introduction">
+            <h1>FACILITIES</h1>
+          </div>
+          
+        <!-- NAVIGATION LINKS BAR -->
+          <div class="navigation-bar">
+            <table>
+              <tr>
+                <td><a href="../Home/Home.html">HOME</a></td>
+                <th>-</th>
+                <td><a href="../About/About.html">ABOUT</a></td>
+                <th>-</th>
+                <td><a href="../Register/Register.html">REGISTER</a></td>
+                <th>-</th>
+                <td><a href="../Gallery/Gallery.html"><u>GALLERY</u></a></td>
+              </tr>
+            </table>
+          </div>
+    
+        <!-- ON THIS PAGE SECTION -->
+          <div class="onThisPage">
+            <div class="onThisPage-left">
+              <b>On This Page:</b><br><br>
+                • Featured Student<br>
+                • Arts and Performance<br>
+                • Sports and Athletics<br>
+
+            </div>
+            <div class="onThisPage-right">
+              In the Student Showcase of National University Manila, you'll see the amazing achievements and talents of our students. This includes their academic awards, innovative research projects, and artistic performances in music, theater, and visual arts. You'll also find photos of our student athletes in action, their victories in sports, and their leadership roles in various clubs and organizations. The showcase highlights the diverse and vibrant experiences of our students, reflecting their hard work, creativity, and dedication.
+            </div>
+          </div>
+       
+          <hr class="medium">
+           
+          <div class="showcase-title">
+             <h1>Featured Student</h1>
+          </div>
+          
+          <div class="showcase">
+            <div class="showcase-content">
+              <table>
+                <colgroup>
+                  <col style="width: 40%;">
+                  <col style="width: 100%;">
+                </colgroup>
+                <tr>
+                  <td style="width: 60%; vertical-align: top; text-align: left;">
+                    <h1>A Rising Star in Blockchain Innovation</h1>
+                    <p>Congratulations, Farrah V. Montalban from National University - Manila!
+                      <br>
+                      <br>
+                      Farrah served as the Committee Head for Operations at Junior Blockchain Education Consortium of the Philippines - NU Manila, actively participated in Bonkathon x Whack-a-Thon, and Renaissance Hackathon, also volunteering for BCC 2024, earning a Solana Developer Certification and a Blockchain Developer Mentor.
+                      <br>
+                      <br>
+                      Farrah envisions applying blockchain in her future endeavors through research, startups, collaborations, education, and solving real-world problems. She is excited to engage in more blockchain-related events and workshops such as Solana Breakpoint where she’ll get more chance of building a strong network and gaining practical experiences.</p>
+                  </td>
+                  <td style="width: 100%; vertical-align: middle; text-align: center;">
+                    <img src="img/blockchain.jpg" class="showcase-image" style="height: 500px;">
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+
+        <hr class="medium">
+           
+        <div class="showcase-title">
+          <h1>Arts and Performance</h1>
+        </div>
+        
+        <div class="showcase">
+          <div class="showcase-content">
+            <table>
+              <colgroup>
+                <col style="width: 100%;">
+                <col style="width: 60%;">
+              </colgroup>
+              <tr>
+                <td style="vertical-align: middle; text-align: center;">
+                  <section class="container">
+                    <div class="slider-wrapper">
+                      <div class="slider">
+                        <img id="slide-1" src="img/comics1.jpg" />
+                        <img id="slide-2" src="img/comics2.jpg" />
+                      </div>
+                    </div>
+                  </section>
+                </td>
+                <td style="vertical-align: top; ">
+                  <h1>Comics</h1>
+                  <p>Happy Mother's Day to everyone who embodies the spirit of motherhood in their own unique way. 💛💙<br><br>
+                    Motherhood extends beyond giving birth; let's also express gratitude to the women who care for and support us.<br><br> 
+                    Nationalians, this Mother's Day, tag those special women in the comments to show your appreciation. 💛💙</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+<div class="showcase">
+  <div class="showcase-content">
+    <table>
+      <colgroup>
+        <col style="width: 100%;">
+        <col style="width: 60%;">
+      </colgroup>
+      <tr>
+        <td style="vertical-align: middle; text-align: center;">
+          <section class="container">
+            <div class="slider-wrapper">
+              <div class="slider">
+                <img id="slide-1" src="img/street1.jpg" />
+                <img id="slide-2" src="img/street2.jpg" />
+              </div>
+            </div>
+          </section>
+        </td>
+        <td style="vertical-align: top; ">
+          <h1>CCIT Street</h1>
+          <p>CCIT Street 
+            <br>🏆 Best in Attire
+            <br>🏆 2nd Runner Up
+            <br><br>We, the team, is extremely grateful for everyone who supported us from the start to the very end. Especially to our very own NU College of Computing & Information Technologies Student Council, to our Ms. President Amor, for providing us everything that we needed, from the information, photoshoots, DP blasts, and to morally and physically supporting us during the competition. To our CO-CCIT Students and athletes who did their best to watch even though they were tired from the sportsfest.
+            <br><br>Thank you so much.
+            <br><br>You guys will always be a part of our motivation, you will always ignite the fire in us. We will continue to work hard and show you the best of our team. See you in the Golden Streets of CCIT!</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+        <hr class="medium">
+           
+        <div class="showcase-title">
+           <h1>Sports and Athletics</h1>
+        </div>
+
+        <div class="showcase">
+          <div class="showcase-content">
+              <h1>National University Baseball Team</h1>
+             <p>History unfolds: NU Bulldogs, named as Kings of UAAP Baseball 
+              After 12 years, the NU Baseball team clinched gold in the UAAP tournament, dethroning three-peat seeking La Salle, 4-2, Sunday at the UP Baseball Field in Quezon City.
+              <br><br>Following the tie at 2-2, in the sixth inning, the Bulldogs capitalized on La Salle’s errors to provide a two-run lead courtesy of Finals MVP MJ Carolino who is also one of NU’s homegrown players.
+              <br><br>"Sobrang nakaka-overwhelm po talaga. Masaya po ako na, finally, aalis po ako na champion," said the graduating pitcher.
+              <br><br> Sophomore Amiel De Guzman who was named as the Best Pitcher, closed the four-hour-long match with a strikeout of JR Samuel, to deny DLSU with runners on second and third.
+              <br><br>NU head coach Romar Landicho lauded the team for their performance and development throughout the season.
+              "Nung nakita ko itong mga bata last season, sabi ko may skills, kulang lang sa puso. Kaya nung binigay sa akin 'yung trabaho, 'yun talaga inuna ko," said the first-year head coach.
+              This is also their first Finals appearance since season 75.</p>
+          </div>
+          <div class="slider">
+              <img src="img/bb1.jpg" alt="Baseball 1">
+              <img src="img/bb2.jpg" alt="Baseball 2">
+              <img src="img/bb3.jpg" alt="Baseball 3">
+              <img src="img/bb4.jpg" alt="Baseball 4">
+              <img src="img/bb5.jpg" alt="Baseball 5">
+          </div>
+      </div>
+<br><br>
+
+<div class="showcase">
+  <div class="showcase-content">
+    <table>
+      <colgroup>
+        <col style="width: 100%;">
+        <col style="width: 60%;">
+      </colgroup>
+      <tr>
+        <td style="vertical-align: middle; text-align: center;">
+          <section class="container">
+            <div class="slider-wrapper">
+              <div class="slider">
+                <img id="slide-1" src="img/vb1.jpg" />
+                <img id="slide-2" src="img/vb2.jpg" />
+                <img id="slide-1" src="img/vb3.jpg" />
+                <img id="slide-2" src="img/vb4.jpg" />
+                <img id="slide-1" src="img/vb5.jpg" />
+                <img id="slide-2" src="img/vb6.jpg" />
+              </div>
+            </div>
+          </section>
+        </td>
+        <td style="vertical-align: top; ">
+          <h1>Dynasty and Redemption: National U makes Volleyball History</h1>
+            <p> NU Volleyball Teams completed a rare golden double after dominating UST in the UAAP Season 86 Collegiate Volleyball Finals last Wednesday, May 15 in front of 22, 515 spectators inside the Mall of Asia Arena. 
+            <br>The NU Bulldogs avenged their elimination matches against UST by sweeping the Finals series, defeating the Tigers in Game 1, 25-17, 26-24, 25-19 and Game 2, 25-21, 22-25, 25-17, 25-15. The Bulldogs are the first team to accomplish a four-peat since Season 70 to 73.
+            <br><br>League’s Second-Best Outside Hitter, Nico Almendras put an exclamation to the 1:54 minute-match with a sharp crosscourt kill to complete his 20-point conversion. Michaelo Buddin who missed most of the eliminations, led the campaign with game-high 28 points from 22 attacks, five of NU’s 16 total blocks and an ace while Leo Aringo supported with 22 points to seal their sixth overall crown.
+            <br><br>Season’s Best Setter, Captain Owa Retamar who was also hailed as the back-to-back Finals MVP with 26 excellent sets, nine digs atop three points, shared how proud he is to his teammates as first-year Jade Disquitado was also named as the Rookie of the Year.
+            <br><br>“Sobrang thankful kasi nakita ko na sa mga player ko pagpunta pa lang namin dito na gusto na nilang kunin itong championship,” said NU head coach Dante Alinsunurin.
+            <br><br>Meanwhile the Lady Bulldogs redeemed the crown, also following their Finals sweep against the same team opponent, 25-23, 23-25, 27-25, 25-16 to mark their fourth overall title in the women’s division (Season 16, 19 and 84).
+            <br><br>Finals MVP and Best Opposite Spiker Alyssa Solomon had season-high 27 points, off 20 kills, four blocks and three aces while Season MVP and Best Outside Hitter, Bella Belen chipped in 19 points. Toring, who had 10 points concluded the 1:27-minute game with a quick attack to mark their 100th point of the match.
+            <br><br>“Hindi madali yung journey. Napakahirap. Lahat ng nakalaban naming teams sobrang magagaling. Pero dahil buo yung kagustuhan po namin na maredeem yung title ngayon, pinagtrabahuhan talaga namin,” said returning Lady Bulldogs head coach Norman Miguel.
+            <br><br>The last golden double was attained back in Season 77.</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+
+        <!-- BOTTOM BANNER -->
+          <hr class="large">
+          <div class="banner-footer">
+            <img src="../.global-resources/NU_Logo.png">
+            <h1>NATIONAL<br>
+                UNIVERSITY
+            </h1>
+            <h2>Don't miss a thing! <b><u><a href="../Register/Register.html">Register</a></u></b> for NU Manila Main Campus <br>
+                Gallery updates.</h2>
+            <div class="banner-footer-links">
+              <table>
+                <tr>
+                  <th>CONTACTS</th>
+                  <th>GET IN TOUCH</th>
+                </tr>
+                <tr>
+                  <td>national-u@gmail.com</td>
+                  <td><a href="https://www.facebook.com/NationalUniversityPhilippines/" target="_blank">Facebook</a></td>
+                </tr>
+                <tr>
+                  <td>(123) 456-7890</td>
+                  <td><a href="https://www.instagram.com/nationaluph/?hl=en" target="_blank">Instagram</a></td>
+                </tr>
+                <tr>
+                  <td>+63 912 345 6789</td>
+                  <td><a href="https://www.linkedin.com/company/nationaluph/?originalSubdomain=ph" target="_blank">LinkedIn</a></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><a href="https://www.youtube.com/@NationalUniversityPhilippines" target="_blank">Youtube</a></td>
+                </tr>
+              </table>
+            </div>
+            <div class="banner-footer-lower">
+              <div class="banner-footer-lower-seperator"></div>
+              <p>© 2024 National University Manila Campus Gallery. All rights reserved</p>
+            </div>
+          </div>
+
+    
+
+</body>
+
+</html>

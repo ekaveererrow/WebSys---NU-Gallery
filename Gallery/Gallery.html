@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NU Gallery - Images</title>
+
+    <style>
+
+      /* FONTS DECLARATION */
+      @font-face { font-family: Ruda-Black; src: url('../.fonts/Ruda-Black.TTF'); }
+      @font-face { font-family: Regular; src: url('../.fonts/OpenSans-Regular.ttf'); }
+      @font-face { font-family: Bold; src: url('../.fonts/OpenSans-Bold.TTF'); }
+
+
+      /* COLORS DECLARATION */
+      :root {
+        --nu-blue: #2C3E75;
+        --nu-gold: #D4A62A;
+      }
+
+      body {
+        margin: 0; 
+        padding: 0;
+        font-family: Regular;
+      }
+
+      /* BANNER HEADER STYLES */
+      .banner-header {
+        width: 100%; 
+        height: 100px; 
+        background-color: var(--nu-blue); 
+        display: flex; 
+        align-items: center;
+      }
+      .banner-header img {
+        height: 70px; 
+        margin-right: 10px; 
+        margin-left: 20px;
+      }
+      .banner-header h1 {
+        color: white; 
+        font-size: 20px; 
+        font-weight: bold; 
+        text-align: left; 
+        font-family: Ruda-Black;
+      }
+
+      /* SEPERATOR STYLES */
+      hr.large {
+        border: 0;
+        border-top: 20px solid var(--nu-gold);
+        margin: 0;
+      }
+      hr.medium {
+        border: 0;
+        border-top: 5px solid var(--nu-gold);
+        margin: 0 100px;
+      }
+      hr.small {
+        border: 0;
+        border-top: 1px solid black;
+        margin: 0 100px; 
+      }
+
+      /* INTRODUTION HEADER STYLES */
+      .introduction {
+        height: 300px;
+        background-color: #5f6f9c;
+        display: flex;
+      }
+      .introduction h1 {
+        font-size: 45px;
+        font-family: Bold;
+        margin-left: 50px;
+        margin-top: auto;
+        color: white;
+      }
+
+      /* NAVIGATION BAR STYLES */
+      .navigation-bar {
+        margin-top: 50px; 
+        margin-bottom: 50px;
+        margin-left: 50px;
+      }
+      .navigation-bar a {
+        color: black;
+        text-decoration: none;
+        padding: 0 50px;
+        font-family: Bold;
+      }
+
+      /* ON THIS PAGE STYLES */
+      .onThisPage {
+        display: flex;
+        flex-direction: row;
+        font-family: Regular;
+        margin-bottom: 60px;
+      }
+      .onThisPage-left {
+        margin-left: 100px;
+        margin-right: 100px;
+        width: 200px;
+      }
+      .onThisPage-right {
+        margin-right: 100px;
+        margin-left: 20px;
+        width: 100%;
+        font-size: 20px;
+        text-align: justify;
+      }
+
+      /* SHOWCASE STYLES */
+      .showcase {
+        margin-top: 50px;
+      }
+      .showcase h1 {
+        font-family: Regular;
+        font-weight: 200;
+        font-size: 45px;
+        margin-left: 120px;
+        margin-right: 120px;
+      }
+      .showcase-images {
+        text-align: center;
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 50px;
+      }
+      .showcase-images img {
+        width: 500px;
+        height: 300px;
+        margin: 20px 20px;
+      }
+      .button {
+            margin-bottom: 50px;
+            background-color: #344371;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+      /* BANNER FOOTER STYLES */
+      .banner-footer {
+        width: 100%;
+        height: 300px;
+        background-color: var(--nu-blue);
+        display: flex;
+      }
+      .banner-footer img {
+        height: 70px; 
+        margin-right: 10px; 
+        margin-left: 50px; 
+        margin-top: 30px;
+      }
+      .banner-footer h1 {
+        color: white; 
+        font-size: 20px; 
+        font-weight: bold; 
+        text-align: left; 
+        font-family: Ruda-Black; 
+        margin-top: 40px;
+      }
+      .banner-footer h2 {
+        margin-top: 115px; 
+        margin-left: 50px; 
+        position: absolute; 
+        color: white; 
+        font-size: 15px; 
+        font-family: Regular;
+        font-weight: 500;
+      }
+      .banner-footer a {
+        color: white;
+        text-decoration: none;
+      }
+      .banner-footer-links {
+        margin-top: 40px; 
+        margin-left: auto; 
+        margin-right: 70px; 
+        color: white; 
+        font-size: 15px; 
+        font-family: Regular;
+      }
+      .banner-footer-links table {
+        border-collapse: collapse; 
+        text-align: left; 
+        vertical-align: top; 
+        border-spacing: 15px;
+      }
+      .banner-footer-links th {
+        padding-bottom: 20px;
+        font-size: 15px;
+        color: #959689;
+        font-family: Regular;
+        font-weight: 100;
+      }
+      .banner-footer-links td {
+        padding-right: 70px;
+        padding-bottom: 5px;
+        color: #D9D9D9;
+      }
+      .banner-footer-links a {
+        color: #D9D9D9;
+        text-decoration: none;
+      }
+      .banner-footer-lower {
+        position: absolute; 
+        margin-top: 220px; 
+        width: 100%; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center;
+      }
+      .banner-footer-lower-seperator {
+        width: 95%; 
+        height: 1px; 
+        background-color: white;
+      }
+      .banner-footer-lower p {
+        font-family: Regular;
+        color: white;
+        margin-top: 20px;
+      }
+
+      /* LINKS HOVER COLOR */
+      a:hover {
+        color: #007bff;
+      }
+
+    </style>
+    <body>
+
+      <!-- TOP BANNER -->
+      <div class="banner-header">
+        <img src="../.global-resources/NU_Logo.png">
+        <h1>NATIONAL<br>
+          UNIVERSITY
+        </h1>
+      </div>
+      <hr class="large">
+
+      <div class="introduction">
+        <h1>GALLERY</h1>
+      </div>
+
+      <!-- NAVIGATION LINKS BAR -->
+      <div class="navigation-bar">
+        <table>
+          <tr>
+            <td><a href="../Home/Home.html">HOME</a></td>
+            <th>-</th>
+            <td><a href="../About/About.html">ABOUT</a></td>
+            <th>-</th>
+            <td><a href="../Register/Register.html">REGISTER</a></td>
+            <th>-</th>
+            <td><a href="Gallery.html"><u>GALLERY</u></a></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ON THIS PAGE SECTION -->
+      <div class="onThisPage">
+        <div class="onThisPage-left">
+          <b>On This Page:</b><br><br>
+            • Facilities<br>
+            • Events<br>
+            • Student Showcase<br>
+        </div>
+        <div class="onThisPage-right">
+          Welcome home to National University, where our vibrant community of professors, advisors, friends, and teammates is here to support and 
+          encourage you. Regardless of your background, National University is your home. Here at the National University Main Campus Gallery, you 
+          can explore various aspects of our dynamic campus life and immerse yourself in the experiences and achievements that define our community.
+        </div>
+      </div>
+
+      <hr class="medium">
+
+      <!-- IMAGE SHOWCASE SECTION -->
+      <div class="showcase">
+        <h1>Facilities</h1>
+        <div class="showcase-images">
+          <img src=".resource/mario_jhocson_statue.jpg">
+          <img src=".resource/library2.jpg">
+          <img src=".resource/computer_lab2.jpg">
+          <br>
+          <a href="../Facilities/Facilities.html" class="button">View More</a>
+        </div>
+      </div>
+      <hr class="medium">
+      <div class="showcase">
+        <h1>Events</h1>
+        <div class="showcase-images">
+          <img src=".resource/gallery_events-1.png">
+          <img src=".resource/gallery_events-2.png">
+          <img src=".resource/gallery_events-3.png">
+          <br>
+          <a href="../Events/Events.html" class="button">View More</a>
+        </div>
+      </div>
+      <hr class="medium">
+      <div class="showcase">
+        <h1>Student Showcase</h1>
+        <div class="showcase-images">
+          <img src=".resource/placeholder.png">
+          <img src=".resource/placeholder.png">
+          <img src=".resource/placeholder.png">
+          <br>
+          <a href="../Student Showcase/Student_Showcase.html" class="button">View More</a>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 200px"></div>
+
+      <!-- BOTTOM BANNER -->
+      <hr class="large">
+      <div class="banner-footer">
+        <img src="../.global-resources/NU_Logo.png">
+        <h1>NATIONAL<br>
+            UNIVERSITY
+        </h1>
+        <h2>Don't miss a thing! <b><u><a href="../Register/Register.html">Register</a></u></b> for NU Manila Main Campus <br>
+            Gallery updates.</h2>
+        <div class="banner-footer-links">
+          <table>
+            <tr>
+              <th>CONTACTS</th>
+              <th>GET IN TOUCH</th>
+            </tr>
+            <tr>
+              <td>national-u@gmail.com</td>
+              <td><a href="https://www.facebook.com/NationalUniversityPhilippines/" target="_blank">Facebook</a></td>
+            </tr>
+            <tr>
+              <td>(123) 456-7890</td>
+              <td><a href="https://www.instagram.com/nationaluph/?hl=en" target="_blank">Instagram</a></td>
+            </tr>
+            <tr>
+              <td>+63 912 345 6789</td>
+              <td><a href="https://www.linkedin.com/company/nationaluph/?originalSubdomain=ph" target="_blank">LinkedIn</a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a href="https://www.youtube.com/@NationalUniversityPhilippines" target="_blank">Youtube</a></td>
+            </tr>
+          </table>
+        </div>
+        <div class="banner-footer-lower">
+          <div class="banner-footer-lower-seperator"></div>
+          <p>© 2024 National University Manila Campus Gallery. All rights reserved</p>
+        </div>
+      </div>
+
+    </body>
+  </head>
+</html>

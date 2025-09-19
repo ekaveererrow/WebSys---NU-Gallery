@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NU Gallery - Register</title>
+    <style>
+
+      /* FONTS DECLARATION */
+      @font-face { font-family: Ruda-Black; src: url('../.fonts/Ruda-Black.TTF'); }
+      @font-face { font-family: Regular; src: url('../.fonts/OpenSans-Regular.ttf'); }
+      @font-face { font-family: Bold; src: url('../.fonts/OpenSans-Bold.TTF'); }
+
+
+      /* COLORS DECLARATION */
+      :root {
+        --nu-blue: #2C3E75;
+        --nu-gold: #D4A62A;
+      }
+
+      body {
+        margin: 0; 
+        padding: 0;
+        font-family: Regular;
+      }
+
+      /* BANNER HEADER STYLES */
+      .banner-header {
+        width: 100%; 
+        height: 100px; 
+        background-color: var(--nu-blue); 
+        display: flex; 
+        align-items: center;
+      }
+      .banner-header img {
+        height: 70px; 
+        margin-right: 10px; 
+        margin-left: 20px;
+      }
+      .banner-header h1 {
+        color: white; 
+        font-size: 20px; 
+        font-weight: bold; 
+        text-align: left; 
+        font-family: Ruda-Black;
+      }
+
+      /* SEPERATOR STYLES */
+      hr.large {
+        border: 0;
+        border-top: 20px solid var(--nu-gold);
+        margin: 0;
+      }
+      hr.medium {
+        border: 0;
+        border-top: 5px solid var(--nu-gold);
+        margin: 0 100px;
+      }
+      hr.small {
+        border: 0;
+        border-top: 1px solid black;
+        margin: 0 100px; 
+      }
+
+      /* NAVIGATION BAR STYLES */
+      .navigation-bar {
+        margin-top: 50px; 
+        margin-bottom: 20px;
+        margin-left: 50px;
+      }
+      .navigation-bar a {
+        color: black;
+        text-decoration: none;
+        padding: 0 50px;
+        font-family: Bold;
+      }
+
+
+      /* INTRODUCTION STYLES */
+      .introduction {
+        margin: 0 110px;
+        margin-top: 50px;
+      }
+      .introduction h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        font-family: Bold;
+      }
+      .introduction p {
+        font-size: 14px;
+      }
+
+      /* FORMS STYLES */
+      .forms {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 50px;
+      }
+      .form-container {
+        width: 50%;
+        margin-left: 120px;
+        margin-right: 300px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      .form-group input[type="text"],
+      .form-group input[type="email"] {
+        width: calc(100% - 10px);
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .gender-options {
+        display: flex;
+        align-items: center;
+      }
+      .gender-options label {
+        margin-right: 20px;
+        margin-top: 10px;
+        margin-left: 5px;
+      }
+      button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+      .disclaimer {
+        font-size: 12px;
+        margin-top: 20px;
+        color: #777;
+      }
+      .disclaimer u {
+        color: #007bff;
+        text-decoration: none;
+      }
+      .image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 50px;
+        margin-right: 120px;
+      }
+      .image-container img {
+        width: 80%;
+        border-radius: 50%;
+      }
+      
+      /* LINKS HOVER COLOR */
+      a:hover {
+        color: #007bff;
+      }
+      
+    </style>
+    <body>
+
+      <!-- TOP BANNER -->
+      <div class="banner-header">
+        <img src="../.global-resources/NU_Logo.png">
+        <h1>NATIONAL<br>
+          UNIVERSITY
+        </h1>
+      </div>
+      <hr class="large">
+
+      <!-- NAVIGATION LINKS BAR -->
+      <div class="navigation-bar">
+        <table>
+          <tr>
+            <td><a href="../Home/Home.html">HOME</a></td>
+            <th>-</th>
+            <td><a href="../About/About.html">ABOUT</a></td>
+            <th>-</th>
+            <td><a href="Register.html"><u>REGISTER</u></a></td>
+            <th>-</th>
+            <td><a href="../Gallery/Gallery.html">GALLERY</a></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- INTRODUCTION SECTION -->
+      <div class="introduction">
+        <h1>REGISTER</h1>
+        <p>Don't miss a thing! Register for NU Manila Campus Gallery <br>
+          updates.
+        </p>
+      </div>
+      <hr class="medium">
+
+      <!-- FORMS SECTION -->
+      <div class="forms">
+        <div class="form-container">
+          <form>
+            <div class="form-group">
+              <label for="first-name">FIRST NAME*</label>
+              <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group">
+              <label for="last-name">LAST NAME*</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">EMAIL ADDRESS*</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group">
+              <label for="birthday">BIRTHDAY*</label>
+              <input type="text" id="birthday" name="birthday" placeholder="MM / DD / YYYY" required>
+            </div>
+            <div class="form-group">
+              <label>GENDER*</label>
+              <div class="gender-options">
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+              </div>
+            </div>
+            <button type="submit">REGISTER</button>
+          </form>
+          <p class="disclaimer">
+            This site is intended for individuals seeking information about National University Manila Campus. By registering, you agree to our <u>Privacy Policy</u> and <u>Terms of Use</u>.
+          </p>
+        </div>
+        <div class="image-container">
+          <img src=".resource/placeholder.png" alt="National University">
+        </div>
+      </div>
+
+    </body>
+  </head>
+</html>
